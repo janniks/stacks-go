@@ -4,7 +4,7 @@ package tests
 import (
 	"testing"
 
-	stacks "github.com/hirosystems/stacks-go"
+	stacks "github.com/janniks/stacks-go"
 )
 
 func TestVersion(t *testing.T) {
