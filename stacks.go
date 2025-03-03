@@ -1,5 +1,5 @@
 // Package stacks provides Go bindings and utilities for the Stacks blockchain.
-package main
+package stacksgo
 
 // Version returns the current version of the stacks-go library.
 func Version() string {
