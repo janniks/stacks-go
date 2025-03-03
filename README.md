@@ -24,10 +24,10 @@ import (
 
 func main() {
 	// Get the library version
-	fmt.Println("Library version:", stacks.Version())
+	// fmt.Println("Library version:", stacks.Version())
 
 	// Basic hello function
-	fmt.Println(stacks.Hello())
+	// fmt.Println(stacks.Hello())
 }
 ```
 
