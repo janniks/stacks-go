@@ -37,7 +37,7 @@ jobs:
           token: ${{ github.token }}
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
