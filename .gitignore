@@ -27,5 +27,3 @@ go.work
 # OS specific files
 .DS_Store
 Thumbs.db
-# Added by goreleaser init:
-dist/
