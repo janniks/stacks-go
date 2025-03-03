@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	stacks "github.com/hirosystems/stacks-go"
+	stacks "github.com/janniks/stacks-go"
 )
 
 func main() {

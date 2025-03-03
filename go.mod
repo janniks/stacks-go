@@ -1,3 +1,3 @@
-module github.com/hirosystems/stacks-go
+module github.com/janniks/stacks-go
 
 go 1.24.0

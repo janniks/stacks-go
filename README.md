@@ -9,7 +9,7 @@ This library aims to provide a pure Go implementation for interacting with the S
 ## Installation
 
 ```bash
-go get github.com/hirosystems/stacks-go
+go get github.com/janniks/stacks-go
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ package main
 
 import (
 	"fmt"
-	stacks "github.com/hirosystems/stacks-go"
+	stacks "github.com/janniks/stacks-go"
 )
 
 func main() {
