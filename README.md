@@ -19,17 +19,40 @@ package main
 
 import (
 	"fmt"
-	stacks "github.com/janniks/stacks-go"
+	"encoding/hex"
+	"github.com/janniks/stacks-go/address"
 )
 
 func main() {
-	// Get the library version
-	// fmt.Println("Library version:", stacks.Version())
+	// Encode byte data to base58
+	encoded := address.EncodeBase58([]byte{0, 0, 42})
+	fmt.Println("Base58 encoded:", encoded) // "112f"
 
-	// Basic hello function
-	// fmt.Println(stacks.Hello())
+	// Decode from base58
+	decoded, err := address.DecodeBase58("112f")
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
+	fmt.Printf("Decoded bytes: %v\n", decoded) // [0 0 42]
+
+	// Base58Check encode (with checksum)
+	addr, _ := hex.DecodeString("00f8917303bfa8ef24f292e8fa1419b20460ba064d")
+	checkEncoded := address.EncodeBase58Check(addr)
+	fmt.Println("Address:", checkEncoded) // "1PfJpZsjreyVrqeoAfabrRwwjQyoSQMmHH"
 }
 ```
+
+## Packages
+
+### Address Package
+
+The `address` package provides utilities for working with Stacks addresses and related encodings.
+
+- `base58.go`: Implementation of Base58 and Base58Check encoding/decoding
+  - `EncodeBase58`: Encodes bytes to Base58 string
+  - `DecodeBase58`: Decodes Base58 string to bytes
+  - `EncodeBase58Check`: Encodes bytes with a checksum (Base58Check)
+  - `DecodeBase58Check`: Decodes Base58Check string and verifies checksum
 
 ## Project Structure
 
@@ -38,6 +61,8 @@ The project follows a clean structure:
 ```
 stacks-go/
 ├── *.go           # Core library code
+├── address/       # Address-related functionality
+│   └── base58.go  # Base58 encoding/decoding implementation
 ├── tests/         # Test files
 │   └── *_test.go  # Tests for the library
 └── examples/      # Example applications
